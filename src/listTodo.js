@@ -3,7 +3,6 @@ import Todos from './Todos.js';
 const displayAllTodos = () => {
   if (JSON.parse(localStorage.getItem('todos'))) {
     Todos.todos = JSON.parse(localStorage.getItem('todos'));
-
     let htmlTodo = '';
     Todos.todos.forEach((todo) => {
       htmlTodo = `
@@ -16,7 +15,6 @@ const displayAllTodos = () => {
           <i class="fas fa-trash trash-${todo.id}"></i>
         </li>
         `;
-
       const inputItem = document.getElementById('input-todo');
       inputItem.insertAdjacentHTML('afterend', htmlTodo);
       const threeDotIcon = document.querySelector(`.three-dot-icon-${todo.id}`);
